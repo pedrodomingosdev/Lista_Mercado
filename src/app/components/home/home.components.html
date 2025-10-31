@@ -1,16 +1,25 @@
 <header>
     <h1>Lista de Compras</h1>
 </header>
-<section id="idprincipal">
+<section class="principal">
     <fieldset>
-        <legend>Itens para Lista de Compras</legend>
-        <label for="idtexto">Item:</label>
-        <input type="text" id="idtexto">
-        <button type="button" id="idadicionar">Adicionar</button>
-        <button type="button" id="idremover">Remover</button>
+        <input
+       
+        type="text"
+        [(ngModel)]="novoProduto"
+        placeholder="Digite um produto"
+        />
+    
+        <button (click)="incluirProdutos()">Adicionar</button>
+        
     </fieldset>
     <fieldset>
-        <legend>Itens da Listas</legend>
-        <ol id="idlista"></ol>
+        <ul >
+          <li id="idtexto" *ngFor="let item of listaProdutos">
+            {{ item }}
+          </li>
+          <button (click)="removerProdutos()">Remover</button>
+        </ul>
+        
     </fieldset>
 </section>
