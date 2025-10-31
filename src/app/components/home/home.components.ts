@@ -19,8 +19,11 @@ export class HomeComponents {
     }
   }
 
-  removerProdutos() {
-    const valor = this.novoProduto.trim();
-    this.listaProdutos = this.listaProdutos.filter(p => p !== valor);
+  removerProdutos(index: number) {
+      this.listaProdutos.splice(index, 1);
+  }
+
+  limparLista(){
+    this.listaProdutos = []
   }
 }

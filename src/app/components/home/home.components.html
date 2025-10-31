@@ -1,25 +1,21 @@
-<header>
-    <h1>Lista de Compras</h1>
-</header>
+<section class="header">
+    <header>
+        <h1>Lista de Compras</h1>
+    </header>
+</section>
+
 <section class="principal">
-    <fieldset>
-        <input
-       
-        type="text"
-        [(ngModel)]="novoProduto"
-        placeholder="Digite um produto"
-        />
-    
+    <div class="input-area">
+        <input type="text" [(ngModel)]="novoProduto" placeholder="Digite um produto" />
         <button (click)="incluirProdutos()">Adicionar</button>
-        
-    </fieldset>
-    <fieldset>
-        <ul >
-          <li id="idtexto" *ngFor="let item of listaProdutos">
-            {{ item }}
-          </li>
-          <button (click)="removerProdutos()">Remover</button>
+    </div>
+    <div class="list_itens">
+        <ul>
+            <li *ngFor="let item of listaProdutos; let i = index">
+                {{ item }}
+              <button class="btn-remove" (click)="removerProdutos(i)">Remover</button>
+            </li>
         </ul>
-        
-    </fieldset>
+    </div>
+    <button class="btn-clean" (click)="limparLista()">Limpar lista</button>
 </section>
